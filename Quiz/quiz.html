@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style_quiz.css">
+</head>
+<body>
+
+    <div id="quiz-container">
+        <select id="difficulty">
+            <option value="easy" class="diff">Easy</option>
+            <option value="medium" class="diff">Medium</option>
+            <option value="difficult" class="diff">Difficult</option>
+        </select>
+
+        <div id="start">
+            <button id="startBtn" onclick="startQuiz()">START QUIZ</button>
+        </div>
+    </div>
+
+    <div id="question-container" style="display:none;">
+        <div id="question"></div>
+        <div id="options"></div>
+        <div id="timer"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+        
+    </div>
+
+    <div id="resultContainer" style="display:none;">
+        <div id="result"></div>
+    </div>
+    
+    <script src="script_quiz.js"></script>
+</body>
+</html>
+

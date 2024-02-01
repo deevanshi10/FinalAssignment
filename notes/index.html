@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="myNote">
+        <h2 id="addNote">Add your Notes here!</h2>
+        <p id="closeAddNote" onclick="closeAddNote()">&times;</p>
+        <table>
+            <tr>
+                <td><label for="title">Title:</label></td>
+                <td>
+                    <input type="text" id="title" name="title" required>
+                    <span class="error-text" id="errorTitle"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="description">Description:</label></td>
+                <td>
+                    <textarea id="description" name="description" rows="4" cols="30"></textarea><br>
+                    <span class="error-text" id="errorDescription"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" value="Submit" id="submitBtn"
+                        onclick="addNote(event)">ADD</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="all">
+        <h1 id="heading">My Notes</h1>
+        <button id="deleteAllButton" onclick=deleteConfirm()>DELETE SELECTED</button>
+        <button id="AddNewNote" onclick="showAddNote()">ADD A NEW NOTE</button>
+
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAllCheckbox" onclick="selectAllRows()"></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <p>Are you sure you want to delete the selected notes?</p>
+                <button onclick="deleteSelectedNote()" class="confirmButton">Yes</button>
+                <button onclick="closeDelModal()" class="confirmButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
